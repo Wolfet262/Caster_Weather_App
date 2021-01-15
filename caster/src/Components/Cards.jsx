@@ -1,12 +1,16 @@
-import React from 'react';
-import Card from './Card'
+import React from "react";
+import { Card } from "react-bootstrap";
 
-function Cards(props) {
-    return (
-        <div>
-            <h1>Cards Working</h1>
-        </div>
-    );
-}
+const WeatherCard = (props) => {
+  return (
+    <Card style={{ width: "18rem" }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title>The temp is</Card.Title>
+        <button varient="primary"></button>
+      </Card.Body>
+    </Card>
+  );
+};
 
-export default Cards;
+export default WeatherCard;

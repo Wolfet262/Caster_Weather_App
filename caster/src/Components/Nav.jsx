@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 function Nav(props) {
     return (
-        <div>
+        <div className="navlinks">
+            <Link to="/">Caster</Link>
+            <Link to="/main">Main</Link>
             <h1>Nav Working</h1>
         </div>
     );
