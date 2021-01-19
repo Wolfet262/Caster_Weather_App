@@ -2,3 +2,7 @@
   text-align: center;
 }
 
+.row {
+  justify-content: center;
+  margin: 10px 0;
+}

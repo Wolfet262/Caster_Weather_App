@@ -1,30 +1,31 @@
 import React, { useContext, useState } from "react";
 import "./App.css";
-import Header from "./Components/Header";
-import Card from "./Components/Card";
-import { DataContext } from "./Components/DataContext";
-import Searchbar from "./Components/Searchbar";
+import { Container } from 'react-bootstrap'
+import Cards from "./Components/Cards.jsx";
+import Search from "./Components/Search.jsx"
+import ApiFetch from "./Components/ApiFetch.jsx"
+import { API_URL, KEY } from "./apiInfo"
+// import Header from "./Components/Header.jsx";
+// import { DataContext } from "./Components/DataContext.jsx";
 
 function App() {
-  return (
-    <div className="App">
-      <DataContext.Provider value={""}>
-        <div className="header">
-          <Header />
-          <Searchbar />
-        </div>
+  const { data, error, isLoading, setUrl } = ApiFetch();
+  console.log(data);
 
-        <div className="Cards">
-          <Card
-            datetime="2021-14-01"
-            low_temp="36.9"
-            max_temp="72.6"
-            description="Clear Sky"
-            icon="c01d"
-          />
+  return (
+    <Container className="App">
+      {/* <DataContext.Provider value={""}> */}
+      <Search onSearch={(city) => setUrl(`${API_URL}units=I&days=5&city=${city}&key=${KEY}`)} />
+      {data && <Cards weathers={data.list}/>}
+        {/* <div className="Cards">
+          <Search/>
+          <Card/>
         </div>
-      </DataContext.Provider>
-    </div>
+        <div className="header">
+          
+        </div> */}
+      {/* </DataContext.Provider> */}
+    </Container>
   );
 }
 

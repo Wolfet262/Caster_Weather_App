@@ -1,19 +1,24 @@
-import React from "react";
-import { Card } from "react-bootstrap";
+import React from 'react';
+import { Card } from 'react-bootstrap';
+import { API_URL, KEY } from "../apiInfo";
 
-const WeatherCard = ({ datetime, description, low_temp, max_temp, icon }) => {
-  const date = new Date(datetime);
+
+const WeatherCard = async () => {
+
+  const date = new Date('');
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{width: '18rem'}}>
       <Card.Img
         variant="top"
-        src={`https://api.weatherbit.io/v2.0/forecast/daily?${icon}`}
+        src={``}
       />
       <Card.Body>
-        <Card.Title>{description}</Card.Title>
-        <p>Min: {low_temp}</p>
-        <p>Max: {max_temp}</p>
-        <button varient="primary"></button>
+        <Card.Title>{}</Card.Title>
+        <p>
+          {date.toLocaleDateString()} 
+        </p>
+        <p>Min: {}</p>
+        <p>Max: {}</p>
       </Card.Body>
     </Card>
   );
