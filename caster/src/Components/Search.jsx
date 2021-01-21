@@ -1,25 +1,24 @@
 import React, { useState } from "react";
 import { Row, Col, FormControl, Button } from "react-bootstrap";
-import { API_URL, KEY } from "../apiInfo";
 
-const Search = ({onSearch}) => {
+
+const Search = ({ onSearch }) => {
   const [city, setCity] = useState("");
 
   return (
     <>
       <Row>
         <Col>
-          <h1>Search your city</h1>
+          <h1>Enter a City</h1>
         </Col>
       </Row>
 
       <Row>
         <Col xs={4}>
           <FormControl
-            placeholder="Ex. Maimi, Fl"
+            placeholder="Ex. Miami, Fl"
             onChange={(event) => setCity(event.target.value)}
             value={city}
-            
           />
         </Col>
       </Row>
