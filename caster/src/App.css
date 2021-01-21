@@ -35,4 +35,9 @@ body {
 
 .card-body {
   padding: .2rem;
+  background-image: linear-gradient(grey, rgb(160, 160, 160));
+}
+
+.list-group-item {
+  padding: .75rem .5rem;
 }
